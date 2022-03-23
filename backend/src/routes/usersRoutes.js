@@ -1,0 +1,14 @@
+"use strict";
+exports.__esModule = true;
+exports.usersRouter = void 0;
+var express_1 = require("express");
+var expressAsyncHandler = require("express-async-handler");
+var signIn_1 = require("../components/users/controllers/signIn");
+var signUp_1 = require("../components/users/controllers/signUp");
+var updateUser_1 = require("../components/users/controllers/updateUser");
+var isAuth_1 = require("../middlewares/isAuth");
+var usersRouter = (0, express_1.Router)();
+exports.usersRouter = usersRouter;
+usersRouter.post('/signin', expressAsyncHandler(signIn_1.signIn));
+usersRouter.post('/signup', expressAsyncHandler(signUp_1.signUp));
+usersRouter.put('/profile', isAuth_1.isAuth, expressAsyncHandler(updateUser_1.updateUser));

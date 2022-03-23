@@ -1,0 +1,12 @@
+"use strict";
+exports.__esModule = true;
+exports.productsRouter = void 0;
+var express = require("express");
+var getProductBySlug_1 = require("../components/products/controllers/getProductBySlug");
+var getProducts_1 = require("../components/products/controllers/getProducts");
+var getProductsById_1 = require("../components/products/controllers/getProductsById");
+var productsRouter = express.Router();
+exports.productsRouter = productsRouter;
+productsRouter.get('/', getProducts_1.getProducts);
+productsRouter.get('/slug/:slug', getProductBySlug_1.getProductBySlug);
+productsRouter.get('/:id', getProductsById_1.getProductsById);

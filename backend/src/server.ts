@@ -1,5 +1,5 @@
 import express = require('express');
-import path from 'path';
+import path = require('path');
 import { routes } from './routes/index';
 import cors = require('cors');
 const app = express();

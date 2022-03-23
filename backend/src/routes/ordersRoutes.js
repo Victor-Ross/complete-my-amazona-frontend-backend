@@ -1,0 +1,16 @@
+"use strict";
+exports.__esModule = true;
+exports.ordersRouter = void 0;
+var express = require("express");
+var expressAsyncHandler = require("express-async-handler");
+var createOrder_1 = require("../components/orders/createOrder");
+var getOrderById_1 = require("../components/orders/getOrderById");
+var changeOrderIsPaid_1 = require("../components/orders/changeOrderIsPaid");
+var getOrdersByUser_1 = require("../components/orders/getOrdersByUser");
+var isAuth_1 = require("../middlewares/isAuth");
+var ordersRouter = express.Router();
+exports.ordersRouter = ordersRouter;
+ordersRouter.post('/', isAuth_1.isAuth, expressAsyncHandler(createOrder_1.createOrder));
+ordersRouter.get('/mine', isAuth_1.isAuth, getOrdersByUser_1.getOrdersByUser);
+ordersRouter.get('/:id', isAuth_1.isAuth, getOrderById_1.getOrderById);
+ordersRouter.put('/:id/pay', isAuth_1.isAuth, expressAsyncHandler(changeOrderIsPaid_1.changeOrderIsPaid));
