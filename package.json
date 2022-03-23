@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "cd backend && yarn install && prisma generate cd ../frontend && yarn install && yarn run build",
+    "build": "cd backend && yarn install cd ../frontend && yarn install && yarn run build ../backend yarn prisma generate",
     "start": "node backend/src/server.js"
   }
 }
