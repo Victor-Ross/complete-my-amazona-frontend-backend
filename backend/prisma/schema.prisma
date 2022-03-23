@@ -1,0 +1,109 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id         String   @id @default(uuid())
+  name       String   @unique
+  email      String   @unique
+  password   String
+  isAdmin    Boolean  @default(false)
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  orders Order[]
+
+  @@map("users")
+}
+
+model Product {
+  id           String   @id @default(uuid())
+  name         String   @unique
+  slug         String   @unique
+  image        String
+  brand        String
+  category     String
+  description  String
+  price        Float
+  countInStock Int
+  rating       Float
+  numReviews   Float
+  created_at   DateTime @default(now())
+  updated_at   DateTime @updatedAt
+
+  order_products OrderProduct[]
+
+  @@map("products")
+}
+
+model Order {
+  id                     String          @id @default(uuid())
+  items_price            Float
+  shipping_price         Float
+  tax_price              Float
+  total_price            Float
+  created_at             DateTime        @default(now())
+  updated_at             DateTime        @updatedAt
+  payment_method         String
+  is_paid                Boolean         @default(false)
+  paid_at                DateTime
+  is_delivered           Boolean         @default(false)
+  delivered_at           DateTime
+  fk_user_id             String
+  user                   User            @relation(fields: [fk_user_id], references: [id])
+  order_products         OrderProduct[]
+  fk_shipping_address_id String
+  shipping_address       ShippingAddress @relation(fields: [fk_shipping_address_id], references: [id])
+  fk_payment_results_id  String          @unique
+  payment_results        PaymentResults  @relation(fields: [fk_payment_results_id], references: [id])
+
+
+  @@map("orders")
+}
+
+model OrderProduct {
+  id            String  @id @default(uuid())
+  fk_order_id   String
+  order         Order   @relation(fields: [fk_order_id], references: [id])
+  fk_product_id String
+  product       Product @relation(fields: [fk_product_id], references: [id])
+  slug          String
+  name          String
+  quantity      Int
+  image         String
+  price         Float
+
+  @@map("orderproducts")
+}
+
+model ShippingAddress {
+  id         String   @id @default(uuid())
+  fullName   String
+  address    String
+  city       String
+  postalCode String
+  country    String
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  orders Order[]
+
+  @@map("shippingAddress")
+}
+
+model PaymentResults {
+  id            String @id @default(uuid())
+  status        String
+  updated_time  String
+  email_address String
+
+  order Order?
+}

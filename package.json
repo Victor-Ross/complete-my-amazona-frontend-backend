@@ -1,0 +1,10 @@
+{
+  "name": "mern-ecommerce-like-amazon",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "cd backend && yarn install && cd ../frontend && yarn install && yarn run build",
+    "start": "node backend/src/server.js"
+  }
+}

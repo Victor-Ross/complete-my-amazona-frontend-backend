@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  -webkit-font-smoothing: antialised;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* @media (max-width: 1080px) {
+  html {
+  }
+}
+
+@media (min-width: 720px) {
+  html {
+  }
+} */
+
+body,
+input,
+textarea,
+select,
+button {
+  font: 400 1rem 'Roboto', sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+.site-container {
+  min-height: 100vh;
+}
+
+.buttonsDefaultColors {
+  background-color: #f0c040;
+  color: #000;
+
+  transition: filter 0.2s;
+
+  &:hover {
+    background-color: #f0c040;
+    color: #000;
+    filter: brightness(0.9);
+  }
+
+  &:disabled {
+    background-color: #f0c040;
+    color: #000;
+  }
+}
