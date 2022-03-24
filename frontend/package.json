@@ -4,9 +4,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "tsc": "tsc",
-    "build": "vite build",
-    "postinstall": "yarn run tsc",
+    "build": "yarn add tsc -D && tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
