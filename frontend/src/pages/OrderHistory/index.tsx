@@ -77,7 +77,7 @@ export default function OrderHistoryPage() {
       }
       try {
         ordersDispatch({ type: 'fetch_request' });
-        const { data } = await api.get('/orders/mine', {
+        const { data } = await api.get('/api/orders/mine', {
           headers: { Authorization: `Bearer ${userInfo!.token}` },
         });
         ordersDispatch({ type: 'fetch_success', orders: data });

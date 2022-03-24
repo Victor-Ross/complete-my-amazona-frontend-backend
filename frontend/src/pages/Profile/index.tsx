@@ -76,7 +76,7 @@ export default function ProfilePage() {
 
     try {
       const { data } = await api.put(
-        '/users/profile',
+        '/api/users/profile',
         {
           name,
           email,

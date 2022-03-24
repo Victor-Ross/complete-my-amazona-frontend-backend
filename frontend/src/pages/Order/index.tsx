@@ -154,7 +154,7 @@ export default function OrderPage() {
     return actions.order!.capture().then(async function (details) {
       try {
         orderDispatch({ type: 'pay_request' });
-        const { data } = await api.put(`/orders/${order.id}/pay`, details, {
+        const { data } = await api.put(`/api/orders/${order.id}/pay`, details, {
           headers: { authorization: `Bearer ${userInfo!.token}` },
         });
         orderDispatch({ type: 'pay_success' });
@@ -182,7 +182,7 @@ export default function OrderPage() {
       try {
         orderDispatch({ type: 'fetch_request' });
 
-        const { data } = await api.get(`/orders/${orderId}`, {
+        const { data } = await api.get(`/api/orders/${orderId}`, {
           headers: { authorization: `Bearer ${userInfo?.token}` },
         });
         orderDispatch({ type: 'fetch_success', order: data });
@@ -202,7 +202,7 @@ export default function OrderPage() {
       };
     } else {
       const loadPayPalScript = async () => {
-        const { data: clientId } = await api.get('/keys/paypal', {
+        const { data: clientId } = await api.get('/api/keys/paypal', {
           headers: { authorization: `Bearer ${userInfo.token}` },
         });
         paypalDispatch({

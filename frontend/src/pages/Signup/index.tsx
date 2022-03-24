@@ -38,7 +38,7 @@ export function Signup() {
     }
 
     try {
-      const { data } = await api.post('/users/signup', {
+      const { data } = await api.post('/api/users/signup', {
         name,
         email,
         password,

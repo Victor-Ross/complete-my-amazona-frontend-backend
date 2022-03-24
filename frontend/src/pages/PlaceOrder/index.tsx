@@ -72,7 +72,7 @@ export default function PlaceOrder() {
     try {
       orderDispatch({ type: 'create_order_request' });
       const { data } = await api.post(
-        '/orders',
+        '/api/orders',
         {
           orderItems: cartItems,
           shippingAddress,

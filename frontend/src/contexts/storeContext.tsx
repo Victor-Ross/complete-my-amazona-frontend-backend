@@ -188,7 +188,7 @@ export function StoreProvider({ children }: StoreContextProviderProps) {
   }
 
   async function updateCartHandler(product: Product, quantity: number) {
-    const response = await api.get(`/products/${product.id}`);
+    const response = await api.get(`/api/products/${product.id}`);
     const data: Product = response.data;
 
     if (data.countInStock < quantity) {
@@ -204,7 +204,7 @@ export function StoreProvider({ children }: StoreContextProviderProps) {
     );
     const quantity = existItem ? existItem.quantity + 1 : 1;
 
-    const response = await api.get(`/products/${product.id}`);
+    const response = await api.get(`/api/products/${product.id}`);
     const data: Product = response.data;
 
     if (data.countInStock < quantity) {

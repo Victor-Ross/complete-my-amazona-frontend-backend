@@ -75,7 +75,7 @@ export function ProductPage() {
     const fetchingData = async () => {
       dispatch({ type: 'request' });
       try {
-        const response = await api.get(`/products/slug/${slug}`);
+        const response = await api.get(`/api/products/slug/${slug}`);
         dispatch({ type: 'success', product: response.data });
       } catch (error: any) {
         dispatch({ type: 'fail', error: getError(error) });
@@ -93,7 +93,7 @@ export function ProductPage() {
 
     const quantity = existItem ? existItem.quantity + 1 : 1;
 
-    const { data } = await api.get(`/products/${product.id}`);
+    const { data } = await api.get(`/api/products/${product.id}`);
 
     if (data.countInStock < quantity) {
       window.alert('Sorry. Product is out of stock');

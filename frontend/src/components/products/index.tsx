@@ -72,7 +72,7 @@ export function Products() {
     const fetchData = async () => {
       dispatch({ type: 'request' });
       try {
-        const response = await api.get('/products');
+        const response = await api.get('/api/products');
         dispatch({ type: 'success', products: response.data });
       } catch (error: any) {
         dispatch({ type: 'fail', error: error.message });

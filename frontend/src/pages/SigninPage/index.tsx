@@ -31,7 +31,7 @@ export function Signin() {
     event.preventDefault();
 
     try {
-      const { data } = await api.post('/users/signin', {
+      const { data } = await api.post('/api/users/signin', {
         email,
         password,
       });
