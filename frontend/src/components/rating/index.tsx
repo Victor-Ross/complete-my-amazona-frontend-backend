@@ -1,4 +1,4 @@
-import styles from './styles.module.scss';
+import './styles.module.css';
 
 type RatingProps = {
   rating: number;
@@ -7,7 +7,7 @@ type RatingProps = {
 
 export function Rating({ rating, numReviews }: RatingProps) {
   return (
-    <div className={styles.rating}>
+    <div className="rating">
       <span>
         <i
           className={
