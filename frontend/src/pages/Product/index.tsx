@@ -1,5 +1,5 @@
 import { useEffect, useReducer } from 'react';
-import { Navigate, useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 import Badge from 'react-bootstrap/Badge';
 import Button from 'react-bootstrap/Button';
@@ -13,11 +13,12 @@ import { Rating } from '../../components/rating';
 import { api } from '../../services/api';
 import { getError } from '../../utils/getError';
 
-import styles from './styles.module.scss';
 import { Helmet } from 'react-helmet-async';
 import { MessageBox } from '../../components/messageBox';
 import { LoadingBox } from '../../components/loadingBox';
 import { useStoreContext } from '../../contexts/storeContext';
+
+import './styles.module.css';
 
 type ParamsProduct = {
   slug: string;
@@ -113,11 +114,7 @@ export function ProductPage() {
       ) : (
         <Row>
           <Col md={6}>
-            <img
-              className={styles.imgLarge}
-              src={product.image}
-              alt={product.name}
-            />
+            <img className="imgLarge" src={product.image} alt={product.name} />
           </Col>
           <Col md={3}>
             <ListGroup variant="flush">

@@ -9,7 +9,7 @@ import { Product } from '../product';
 import { LoadingBox } from '../loadingBox';
 import { MessageBox } from '../messageBox';
 
-import styles from './styles.module.scss';
+import './styles.module.css';
 
 type Product = {
   id: string;
@@ -83,12 +83,12 @@ export function Products() {
   }, []);
 
   return (
-    <div className={styles.container}>
+    <div className="container">
       <Helmet>
         <title>Amazona</title>
       </Helmet>
       <h1>Featured products</h1>
-      <div className={styles.products}>
+      <div className="products">
         {isLoading ? (
           <LoadingBox />
         ) : error ? (

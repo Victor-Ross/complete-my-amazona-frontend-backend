@@ -11,7 +11,7 @@ import Button from 'react-bootstrap/Button';
 import { LoadingBox } from '../../components/loadingBox';
 import { MessageBox } from '../../components/messageBox';
 
-import styles from './styles.module.scss';
+import './styles.module.css';
 
 type State = {
   loading: boolean;
@@ -129,11 +129,7 @@ export default function OrderHistoryPage() {
                     currency: 'BRL',
                   }).format(order.total_price)}
                 </td>
-                <td
-                  className={
-                    order.is_paid === true ? styles.paid : styles.notPaid
-                  }
-                >
+                <td className={order.is_paid === true ? 'paid' : 'notPaid'}>
                   {order.is_paid
                     ? new Intl.DateTimeFormat('pt-BR', {
                         dateStyle: 'short',

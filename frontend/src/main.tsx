@@ -9,7 +9,7 @@ import App from './App';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-toastify/dist/ReactToastify.css';
-import './global.scss';
+import './global.css';
 
 ReactDOM.render(
   <React.StrictMode>

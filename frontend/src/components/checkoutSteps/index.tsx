@@ -1,7 +1,7 @@
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
-import styles from './styles.module.scss';
+import './styles.module.css';
 
 type CheckoutStepsProps = {
   step1?: boolean;
@@ -17,11 +17,11 @@ export function CheckoutSteps({
   step4,
 }: CheckoutStepsProps) {
   return (
-    <Row className={styles.checkoutSteps}>
-      <Col className={step1 ? styles.active : ''}>Sign-In</Col>
-      <Col className={step2 ? styles.active : ''}>Shipping</Col>
-      <Col className={step3 ? styles.active : ''}>Payment</Col>
-      <Col className={step4 ? styles.active : ''}>Place Order</Col>
+    <Row className="checkoutSteps">
+      <Col className={step1 ? 'active' : ''}>Sign-In</Col>
+      <Col className={step2 ? 'active' : ''}>Shipping</Col>
+      <Col className={step3 ? 'active' : ''}>Payment</Col>
+      <Col className={step4 ? 'active' : ''}>Place Order</Col>
     </Row>
   );
 }

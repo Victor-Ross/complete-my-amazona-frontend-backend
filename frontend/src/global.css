@@ -7,16 +7,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* @media (max-width: 1080px) {
-  html {
-  }
-}
-
-@media (min-width: 720px) {
-  html {
-  }
-} */
-
 body,
 input,
 textarea,
@@ -42,15 +32,15 @@ a {
   color: #000;
 
   transition: filter 0.2s;
+}
 
-  &:hover {
-    background-color: #f0c040;
-    color: #000;
-    filter: brightness(0.9);
-  }
+.buttonsDefaultColors :hover {
+  background-color: #f0c040;
+  color: #000;
+  filter: brightness(0.9);
+}
 
-  &:disabled {
-    background-color: #f0c040;
-    color: #000;
-  }
+.buttonsDefaultColors :disabled {
+  background-color: #f0c040;
+  color: #000;
 }

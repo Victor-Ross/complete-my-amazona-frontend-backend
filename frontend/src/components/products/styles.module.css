@@ -1,9 +1,9 @@
 .container {
   padding: 1rem;
+}
 
-  h1 {
-    margin: 20px 0;
-  }
+.container h1 {
+  margin: 20px 0;
 }
 
 .products {

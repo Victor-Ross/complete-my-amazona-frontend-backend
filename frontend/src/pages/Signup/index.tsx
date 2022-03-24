@@ -10,8 +10,9 @@ import Form from 'react-bootstrap/Form';
 import { useStoreContext } from '../../contexts/storeContext';
 import { api } from '../../services/api';
 
-import styles from './styles.module.scss';
 import { getError } from '../../utils/getError';
+
+import './styles.module.css';
 
 export function Signup() {
   const navigate = useNavigate();
@@ -58,7 +59,7 @@ export function Signup() {
   }, [navigate, redirect, userInfo]);
 
   return (
-    <Container className={styles.smallContainer}>
+    <Container className="smallContainer">
       <Helmet>
         <title>Sign Up</title>
       </Helmet>
