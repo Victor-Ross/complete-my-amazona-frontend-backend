@@ -1,0 +1,24 @@
+.navbarBrand {
+  font-weight: bold;
+}
+
+.sideNavbar {
+  width: 240px;
+  height: 100vh;
+  position: absolute;
+  left: -300px;
+  background-color: #100901;
+  transition: 0.5s;
+}
+
+.siteContainer {
+  transition: 0.4s;
+}
+
+.activeContainer {
+  margin-left: 240px;
+}
+
+.activeNav {
+  left: 0;
+}

@@ -7,7 +7,7 @@ import { useStoreContext } from '../../contexts/storeContext';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 
-import './styles.module.css';
+import './styles.css';
 
 type Product = {
   product: {

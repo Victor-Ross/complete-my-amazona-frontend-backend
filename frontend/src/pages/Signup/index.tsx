@@ -12,7 +12,7 @@ import { api } from '../../services/api';
 
 import { getError } from '../../utils/getError';
 
-import './styles.module.css';
+import './styles.css';
 
 export function Signup() {
   const navigate = useNavigate();

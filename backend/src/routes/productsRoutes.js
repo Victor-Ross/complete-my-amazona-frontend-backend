@@ -2,11 +2,16 @@
 exports.__esModule = true;
 exports.productsRouter = void 0;
 var express = require("express");
+var expressAsyncHandler = require("express-async-handler");
 var getProductBySlug_1 = require("../components/products/controllers/getProductBySlug");
 var getProducts_1 = require("../components/products/controllers/getProducts");
 var getProductsById_1 = require("../components/products/controllers/getProductsById");
+var getProductsCategories_1 = require("../components/products/controllers/getProductsCategories");
+var getProductsWithFilters_1 = require("../components/products/controllers/getProductsWithFilters");
 var productsRouter = express.Router();
 exports.productsRouter = productsRouter;
 productsRouter.get('/', getProducts_1.getProducts);
+productsRouter.get('/search', expressAsyncHandler(getProductsWithFilters_1.getProductsWithFilters));
+productsRouter.get('/categories', expressAsyncHandler(getProductsCategories_1.GetProductsCategories));
 productsRouter.get('/slug/:slug', getProductBySlug_1.getProductBySlug);
 productsRouter.get('/:id', getProductsById_1.getProductsById);

@@ -18,7 +18,7 @@ import { MessageBox } from '../../components/messageBox';
 import { LoadingBox } from '../../components/loadingBox';
 import { useStoreContext } from '../../contexts/storeContext';
 
-import './styles.module.css';
+import './styles.css';
 
 type ParamsProduct = {
   slug: string;
@@ -143,7 +143,7 @@ export function ProductPage() {
               </ListGroup.Item>
             </ListGroup>
           </Col>
-          <Col md={3}>
+          <Col className="mt-5" md={3}>
             <Card>
               <Card.Body>
                 <ListGroup variant="flush">

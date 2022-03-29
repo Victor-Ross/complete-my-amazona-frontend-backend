@@ -45,6 +45,7 @@ type User = {
   email: string;
   password: string;
   token: string;
+  isAdmin: boolean;
 };
 
 type Address = {

@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "build": "cd backend && yarn && cd ../frontend && yarn && yarn run build && cd ../backend && yarn prisma generate",
-    "start": "node backend/src/server.js"
+    "start": "node backend/src/server.js",
+    "dev": "cd backend && yarn dev && cd../frontend && yarn dev"
   }
 }

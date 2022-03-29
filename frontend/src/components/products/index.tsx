@@ -9,7 +9,7 @@ import { Product } from '../product';
 import { LoadingBox } from '../loadingBox';
 import { MessageBox } from '../messageBox';
 
-import './styles.module.css';
+import './styles.css';
 
 type Product = {
   id: string;
@@ -69,6 +69,7 @@ export function Products() {
   });
 
   useEffect(() => {
+    const abortController = new AbortController();
     const fetchData = async () => {
       dispatch({ type: 'request' });
       try {
@@ -80,6 +81,7 @@ export function Products() {
     };
 
     fetchData();
+    return () => abortController.abort();
   }, []);
 
   return (

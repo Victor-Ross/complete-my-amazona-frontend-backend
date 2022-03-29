@@ -1,11 +1,12 @@
-import './styles.module.css';
+import './styles.css';
 
 type RatingProps = {
   rating: number;
-  numReviews: number;
+  numReviews?: number;
+  caption?: string;
 };
 
-export function Rating({ rating, numReviews }: RatingProps) {
+export function Rating({ rating, numReviews, caption }: RatingProps) {
   return (
     <div className="rating">
       <span>
@@ -63,7 +64,11 @@ export function Rating({ rating, numReviews }: RatingProps) {
           }
         />
       </span>
-      <span>&nbsp;&nbsp;{numReviews} reviews</span>
+      {caption ? (
+        <span>{caption}</span>
+      ) : (
+        <span>{' ' + numReviews + ' reviews'}</span>
+      )}
     </div>
   );
 }

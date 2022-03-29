@@ -30,17 +30,19 @@ a {
 .buttonsDefaultColors {
   background-color: #f0c040;
   color: #000;
+  border: 1px solid #aa6c39;
 
   transition: filter 0.2s;
 }
 
-.buttonsDefaultColors :hover {
+.buttonsDefaultColors:hover {
   background-color: #f0c040;
+  border: 1px solid #aa6c39;
   color: #000;
   filter: brightness(0.9);
 }
 
-.buttonsDefaultColors :disabled {
+.buttonsDefaultColors:disabled {
   background-color: #f0c040;
   color: #000;
 }

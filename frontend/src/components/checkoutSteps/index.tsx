@@ -1,7 +1,7 @@
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
-import './styles.module.css';
+import './styles.css';
 
 type CheckoutStepsProps = {
   step1?: boolean;

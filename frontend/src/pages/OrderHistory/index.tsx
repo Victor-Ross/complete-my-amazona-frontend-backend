@@ -11,7 +11,7 @@ import Button from 'react-bootstrap/Button';
 import { LoadingBox } from '../../components/loadingBox';
 import { MessageBox } from '../../components/messageBox';
 
-import './styles.module.css';
+import './styles.css';
 
 type State = {
   loading: boolean;
